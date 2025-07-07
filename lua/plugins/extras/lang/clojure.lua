@@ -12,30 +12,6 @@ return {
     opts = { ensure_installed = { "clojure" } },
   },
 
-  -- Extend auto completion
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "PaterJason/cmp-conjure",
-    },
-    opts = function(_, opts)
-      if type(opts.sources) == "table" then
-        vim.list_extend(opts.sources, { name = "clojure" })
-      end
-    end,
-  },
-
-  {
-    "PaterJason/cmp-conjure",
-    lazy = true,
-    config = function()
-      local cmp = require("cmp")
-      local config = cmp.get_config()
-      table.insert(config.sources, { name = "conjure" })
-      return cmp.setup(config)
-    end,
-  },
-
   -- Enable rainbow parenthesis
   { "HiPhish/rainbow-delimiters.nvim" },
 
@@ -63,7 +39,6 @@ return {
       require("conjure.main").main()
       require("conjure.mapping")["on-filetype"]()
     end,
-    dependencies = { "PaterJason/cmp-conjure" },
     init = function()
       -- print color codes if baleia.nvim is available
       local colorize = require("lazyvim.util").has("baleia.nvim")
@@ -104,12 +79,9 @@ return {
       -- alternatives with <localleader>K and <localleader>gd
       vim.g["conjure#mapping#doc_word"] = "K"
       vim.g["conjure#mapping#def_word"] = "gd"
+
+      -- define array of possible test forms
+      vim.g["conjure#client#clojure#nrepl#test#current_form_names"] = { "deftest", "defflow", "defspec", "describe" }
     end,
-    {
-      "julienvincent/nvim-paredit",
-      config = function()
-        require("nvim-paredit").setup({})
-      end,
-    },
   },
 }
