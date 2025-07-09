@@ -12,9 +12,12 @@ return {
         clojure = false,
         ["*"] = true,
       },
+      mcp = {
+        enabled = true,
+      }
     },
     config = function()
-      require("copilot").setup({})
+      require("copilot").setup()
     end,
   },
   {
