@@ -12,10 +12,11 @@ return {
       })
     end,
   },
+  { "Mofiqul/dracula.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "elflord",
+      colorscheme = "dracula",
     },
   },
 }
