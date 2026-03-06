@@ -31,6 +31,7 @@ return {
       "php",
       "ruby",
       "markdown",
+      "ledger",
     },
   },
   config = function()

@@ -21,7 +21,6 @@ return {
         ensure_installed = {
           "lua_ls", -- Lua (lua-language-server)
           "tailwindcss", -- TailwindCSS (tailwindcss-language-server)
-          "tsserver", -- TypeScript/JavaScript (typescript-language-server)
           "eslint", -- ESLint (eslint-lsp/vscode-eslint-language-server)
           "jsonls", -- JSON (json-lsp/vscode-json-language-server)
           "gopls", -- Go
