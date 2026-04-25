@@ -13,7 +13,18 @@ return {
   },
 
   -- Enable rainbow parenthesis
-  { "HiPhish/rainbow-delimiters.nvim" },
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    config = function()
+      vim.g.rainbow_delimiters = {
+        -- get_parser returns nil (not an error) in Neovim 0.12+, so guard against it
+        condition = function(bufnr)
+          local ok, parser = pcall(vim.treesitter.get_parser, bufnr)
+          return ok and parser ~= nil
+        end,
+      }
+    end,
+  },
 
   -- Add s-exp mappings
   { "PaterJason/nvim-treesitter-sexp" },
