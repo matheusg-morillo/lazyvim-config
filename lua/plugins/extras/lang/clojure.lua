@@ -6,11 +6,8 @@ return {
     })
   end,
 
-  -- Add Clojure & related to treesitter
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = { ensure_installed = { "clojure" } },
-  },
+  -- Clojure parser is installed centrally in plugins/treesitter.lua
+  -- (the main-branch rewrite no longer reads opts.ensure_installed)
 
   -- Enable rainbow parenthesis
   {
@@ -26,8 +23,10 @@ return {
     end,
   },
 
-  -- Add s-exp mappings
-  { "PaterJason/nvim-treesitter-sexp" },
+  -- (Removed: PaterJason/nvim-treesitter-sexp — incompatible with the
+  -- nvim-treesitter `main` branch; it requires `nvim-treesitter.ts_utils`
+  -- which only exists on the legacy `master` branch. Use nvim-paredit for
+  -- s-exp manipulation instead.)
 
   -- Colorize the output of the log buffer
   {

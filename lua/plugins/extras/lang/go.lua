@@ -6,11 +6,9 @@ return {
     })
   end,
 
-  -- Add Go to treesitter
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = { ensure_installed = { "go", "gomod", "gowork" } },
-  },
+  -- Go parsers (go, gomod, gowork) are installed centrally in
+  -- plugins/treesitter.lua (the main-branch rewrite no longer reads
+  -- opts.ensure_installed).
 
   -- LSP configuration for Go
   {

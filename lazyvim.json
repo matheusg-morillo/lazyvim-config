@@ -1,6 +1,5 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.ai.copilot",
     "lazyvim.plugins.extras.lang.clojure",
     "plugins.extras.lang.clojure",
     "plugins.extras.lang.flutter"
