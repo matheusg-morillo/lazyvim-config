@@ -1,0 +1,3 @@
+return {
+  "coder/claudecode.nvim",
+}
