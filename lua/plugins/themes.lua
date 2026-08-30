@@ -1,3 +1,4 @@
+vim.o.background = "light"
 return {
   { "EdenEast/nightfox.nvim" },
   { "folke/tokyonight.nvim" },
@@ -14,9 +15,14 @@ return {
   },
   { "Mofiqul/dracula.nvim" },
   {
+    "catppuccin/nvim",
+    priority = 1000,
+    opts = { flavour = "latte" },
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "dracula",
+      colorscheme = "catppuccin",
     },
   },
 }
